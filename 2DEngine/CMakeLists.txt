@@ -1,7 +1,6 @@
 file(GLOB_RECURSE ENGINE_SOURCES CONFIGURE_DEPENDS src/*.cpp)
-file(GLOB_RECURSE ENGINE_HEADERS CONFIGURE_DEPENDS include/*.hpp)
 
-add_library(2DEngine STATIC ${ENGINE_SOURCES} ${ENGINE_HEADERS})
+add_library(2DEngine STATIC ${ENGINE_SOURCES})
 
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
