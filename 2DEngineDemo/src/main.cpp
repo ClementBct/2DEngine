@@ -1,10 +1,11 @@
 #include <iostream>
-#include <2DEngine/Actor/Actor.hpp>
-#include <2DEngine/Renderer/Renderer.hpp>
+#include <2DEngine/Game/Game.hpp>
 
-int main(int argv, char** args){
-    printf("Hello world \n");
-    Actor myActor;
-    Renderer myRenderer;
+#include <GameObject/Ship.hpp>
+int main(int argv, char **args)
+{
+    Game myNewGame("Super game");
+    myNewGame.initialize();
+    Ship mySuperShip("MySuperShip");
     return 0;
 }
