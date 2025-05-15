@@ -10,6 +10,7 @@ class Scene {
         virtual void update(float i_delta_time_s);
         void addActor(class Actor* i_actor);
         void removeActor(class Actor* i_actor);
+        std::vector<class Actor*> getActorList();
     protected:
     private:
         std::string m_scene_name;

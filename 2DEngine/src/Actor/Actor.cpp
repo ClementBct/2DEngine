@@ -5,6 +5,14 @@
 #include <algorithm>
 
 Actor::Actor(const std::string& i_actor_name, Scene* i_scene_owner) : m_actor_name(i_actor_name), m_scene_owner(i_scene_owner){
+    m_position = (Vector2::Zero);
+}
+Actor::~Actor(){
+    m_scene_owner->removeActor(this);
+    while (!m_component_list.empty())
+	{
+		delete m_component_list.back();
+	}
 }
 
 std::vector<Component*> Actor::getComponentList(){
@@ -32,6 +40,17 @@ void Actor::removeComponent(Component* i_compoent){
 	{
 		m_component_list.erase(iter);
 	}
+}
+
+Vector2 Actor::getPosition(){
+    return m_position;
+}
+float Actor::getRotation(){
+    return m_rotation;
+}
+
+float Actor::getScale(){
+    return m_scale;
 }
 
 std::string Actor::getActorName(){

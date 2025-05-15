@@ -26,3 +26,7 @@ void Scene::removeActor(Actor *i_actor)
 		m_actor_list.erase(iter);
 	}
 }
+std::vector<Actor*> Scene::getActorList(){
+    return m_actor_list;
+}
+

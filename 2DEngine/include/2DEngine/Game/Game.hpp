@@ -13,9 +13,13 @@ class Game {
     protected:
     private:
         std::shared_ptr<class Renderer> m_renderer;
-        class Scene* m_active_scene;
+        class Scene* m_active_scene = nullptr;
         std::vector<class Scene*> m_scene_list;
         std::string m_game_name;
         void processInput();
+        void updateGame();
+        void generateOutput();
+        uint32_t m_ticks_count;
+        void loadSceneData();
 };
 #endif //GAME_HPP 

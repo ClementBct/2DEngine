@@ -4,6 +4,12 @@ Component::Component(const std::string &i_component_name, Actor *i_owner_actor, 
 {
 }
 
+Component::~Component(){
+    if(m_owner_actor){
+        m_owner_actor->removeComponent(this);
+    }
+}
+
 std::string Component::getComponentName()
 {
     return m_component_name;
